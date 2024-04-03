@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="8dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_castle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/blank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_level_house" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lbl_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-16dp"
+        style="@style/TextViewCastle"
+        app:layout_constraintBottom_toBottomOf="@+id/img_castle"
+        app:layout_constraintEnd_toEndOf="@+id/img_castle"
+        app:layout_constraintStart_toStartOf="@+id/img_castle"
+        tools:text="Level 1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lbl_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/TextViewTitle"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_level"
+        tools:text="Find your tools" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lbl_desc"
+        style="@style/TextViewDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/lbl_title"
+        app:layout_constraintStart_toStartOf="@+id/lbl_title"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_title"
+        tools:text="Collect the best ways for you to notice and manage anger" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_activities"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

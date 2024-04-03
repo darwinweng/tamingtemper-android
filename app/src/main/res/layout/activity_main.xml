@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/blank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_tt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_title"
+            style="@style/Toolbar.TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/title_nav"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/prg_loading"
+            android:layout_width="98dp"
+            android:layout_height="3dp"
+            android:progress="70"
+            app:trackThickness="8dp"
+            app:trackCornerRadius="8dp"
+            android:layout_marginTop="-6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/nav_title"
+            app:layout_constraintTop_toBottomOf="@+id/nav_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lbl_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/euclid_circular_b_regular"
+            android:text="3%"
+            android:textColor="@color/colorAccent"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/prg_loading"
+            app:layout_constraintStart_toEndOf="@+id/prg_loading"
+            app:layout_constraintTop_toTopOf="@+id/prg_loading" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/blank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user_profile" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/euclid_circular_b_regular"
+            android:text="0"
+            android:textSize="22sp"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_user"
+            app:layout_constraintEnd_toStartOf="@+id/btn_user"
+            app:layout_constraintTop_toTopOf="@+id/btn_user" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/blank"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_user"
+            app:layout_constraintEnd_toStartOf="@+id/tv_score"
+            app:layout_constraintTop_toTopOf="@+id/btn_user"
+            app:srcCompat="@drawable/ic_fire" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:navGraph="@navigation/main_navigation" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:labelVisibilityMode="labeled"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:theme="@style/BottomNavTheme"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
