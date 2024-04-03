@@ -24,6 +24,6 @@ To install the Taming Temper, follow these steps:
 
 ## Contact
 
-For any questions or inquiries about the Display Level of Temperature app, feel free to contact us at:
+For any questions or inquiries about the Taming Temper app, feel free to contact us at:
 
 - Email: [darwin.oca13@gmail.com](mailto:darwin.oca13@gmail.com)
